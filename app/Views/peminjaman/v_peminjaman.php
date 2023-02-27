@@ -109,8 +109,8 @@
                     <label>Aksi</label>
                     <div class="input-group">
                       <button
+                        id= "kode_barang"
                         type="submit"
-                        id="tombolTambahItem"
                         class="btn btn-sm btn-primary"
                       >
                         <i class="fa fa-plus-square"> Tambah</i></button
@@ -124,11 +124,10 @@
                       </a>&nbsp;
                       <a
                         type="submit"
-                        id="tombolTambahItem"
                         class="btn btn-sm btn-success"
-                        data-toggle="modal" 
-                        onclick="peminjaman()" 
+                        data-toggle="modal"
                         data-target="#peminjaman"
+                    
                       >
                         <i class="fas fa-cart-plus" style="color: white"> Pinjam</i></a
                       >
@@ -186,11 +185,6 @@
         <div class="swal2" data-swal2="<?= session()->getFlashdata('pesanSukses') ?>">
         </div>
       <?php } ?>
-
-    
-
-
-     
      
     </div>
 
@@ -209,29 +203,31 @@
         </button>
       </div>
       <div class="modal-body">
-        <table id="example1" class="table table-bordered table-striped text-sm text-center">
-          <thead>
-            <tr >
-              <th >No</th>
-              <th >Kode</th>
-              <th >Nama</th>
-              <th >Stok</th>
-              <th >Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php $no = 1; 
-            foreach ($barang as $key => $value) { ?>
-            <tr>
-              <td style=" width:30px"><?= $no++ ?></td>
-              <td style=" width:30px"><?= $value['kode_barang'] ?></td> 
-              <td style=" width:30px"><?= $value['nama_barang'] ?></td>
-              <td style=" width:30px"><?= $value['stok'] ?></td>
-              <td style=" width:30px"><button onclick="PilihBarang('<?= $value['kode_barang']?>')" class="btn btn-success btn-xs">Piih</button></td>
-            </tr>
-            <?php } ?>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table id="example1"class="table table-bordered table-striped text-sm text-center">
+            <thead>
+              <tr >
+                <th >No</th>
+                <th >Kode</th>
+                <th >Nama</th>
+                <th >Stok</th>
+                <th >Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php $no = 1; 
+              foreach ($barang as $key => $value) { ?>
+              <tr>
+                <td style=" width:30px"><?= $no++ ?></td>
+                <td style=" width:30px"><?= $value['kode_barang'] ?></td> 
+                <td style=" width:30px"><?= $value['nama_barang'] ?></td>
+                <td style=" width:30px"><?= $value['stok'] ?></td>
+                <td style=" width:30px"><button onclick="PilihBarang('<?= $value['kode_barang']?>')" class="btn btn-success btn-xs">Piih</button></td>
+              </tr>
+              <?php } ?>
+            </tbody>
+          </table>
+        </div>
       </div>
      
     </div>
@@ -259,8 +255,8 @@
         </div>
       </div>
       <div class="modal-footer justify-content-between">
-        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary btn-flat"><i class="fas fa-save"></i> Simpan Transaksi</button>
+        <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+        <button type="submit" onclick="Konfirmasi()"  data-toggle="modal"  class="btn btn-primary "><i class="fas fa-save"></i> Simpan Transaksi</button>
       </div>
       <?php echo form_close() ?>
     </div>
@@ -269,6 +265,7 @@
   <!-- /.modal-dialog -->
 </div>
 <!-- /Modal Peminjaman Barang -->
+
 
 <script>
   $(document).ready(function() {
@@ -289,6 +286,7 @@
         }
       }
     });
+    
   });
 
   function CekBarang() {
@@ -323,18 +321,7 @@
     $('#kode_barang').focus();
   }
 
-  function peminjaman() {
-    if (kode_barang == '') {
-      Swal.fire({
-        title: 'Data Peminjaman Kosong',
-        icon: 'error',
-      });
-    } else {
-      $('#peminjaman').modal('show'); 
-    }
-   
-   
-  }
+
 
 
   
@@ -382,5 +369,6 @@
       icon: 'success'
     })
   }
+  
   
 </script>

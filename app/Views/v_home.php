@@ -136,7 +136,7 @@
               <td><?= $value['username'] ?></td>
               <td><?= $value['nama_barang'] ?></td>
               <td><?= $value['nama_kategori'] ?></td>
-              <td><?= $value['tanggal_pinjam'] ?></td>
+              <td><?= $value['tanggal_pinjam'] ?> <?= $value['jam_pinjam'] ?></td>
               <td><?= $value['qty'] ?></td>
               <td>
               <span class="badge badge-danger">Dipinjam</span>

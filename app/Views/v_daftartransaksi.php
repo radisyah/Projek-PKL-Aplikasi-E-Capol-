@@ -2,10 +2,10 @@
   <div class="card">
     
     <div class="card-header">
-      <h3 class="card-title">Daftar Transaksi Peminjaman</h3>
+      <h3 class="card-title">Daftar Transaksi</h3>
       <div class="card-tools">
-        <button type="button" class="btn btn-primary btn-sm" onclick="NewWin=window.open('<?= base_url('DaftarTransaksi/PrintDaftarTransaksi') ?>','NewWin','toolbar=no' )" class="btn btn-success btn-sm btn-flat"><i class="fas fa-print"></i> Print</button>
         <a class="btn btn-success btn-sm" href="DaftarTransaksi/Excel"><i class="fa fa-file-excel"></i> Excel</a>
+        <button type="button" class="btn btn-primary btn-sm" onclick="NewWin=window.open('<?= base_url('DaftarTransaksi/PrintDaftarTransaksi') ?>','NewWin','toolbar=no' )" class="btn btn-success btn-sm btn-flat"><i class="fas fa-print"></i> Print</button>
       </div>
     </div>
 

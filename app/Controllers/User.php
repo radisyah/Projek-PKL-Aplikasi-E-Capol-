@@ -43,6 +43,7 @@ class User extends BaseController
 		$data = array(
 			'id_user' => $id_user,
 			'username' => $this->request->getPost('username'),
+			'password' => $this->request->getPost('password'),
 			'level' => $this->request->getPost('level'),
 		);
 		$this->ModelUser->update_data($data);

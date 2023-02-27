@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="<?= base_url() ?>/template/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="<?= base_url() ?>/template/dist/img/AdminLTELogo copy.png" rel="shortcut icon">
  
  
   <!-- Google Font: Source Sans Pro -->

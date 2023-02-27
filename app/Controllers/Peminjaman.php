@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 use App\Models\ModelUser;
 use App\Models\ModelTransaksi;
+use App\Models\modelBarang;
 
 
 
@@ -11,6 +12,7 @@ class Peminjaman extends BaseController
 		helper('form');
     $this->ModelUser = new ModelUser();
     $this->ModelTransaksi = new ModelTransaksi();
+    $this->ModelBarang = new ModelBarang();
 	}
 
 	public function index()
@@ -61,17 +63,30 @@ class Peminjaman extends BaseController
 
 	public function AddCart()
 	{
-		$cart = \Config\Services::cart();
-		$cart->insert(array(
-			'id'      =>  $this->request->getPost('kode_barang'),
-			'qty'     =>  $this->request->getPost('qty'),
-			'name'    => $this->request->getPost('nama_barang'),
-			'options' => array(
-				'nama_kategori' => $this->request->getPost('nama_kategori'),
-				'nama_satuan' => $this->request->getPost('nama_satuan'),
-			)
-	 ));
-	 return redirect()->to(base_url('peminjaman'));
+		$kode_barang = $this->request->getPost('kode_barang');
+		$qty = $this->request->getPost('qty');
+
+		$ambilDataBarang =$this->ModelTransaksi->CekBarang($kode_barang);
+		$stokBarang = $ambilDataBarang['stok'];
+
+		if ($qty > intval($stokBarang)) {
+			session()->setFlashdata('pesanGagal','Stok Tidak Mencukupi');
+			return redirect()->to(base_url('peminjaman'));
+		}else {
+			$cart = \Config\Services::cart();
+			$cart->insert(array(
+				'id'      =>  $this->request->getPost('kode_barang'),
+				'qty'     =>  $this->request->getPost('qty'),
+				'name'    => $this->request->getPost('nama_barang'),
+				'options' => array(
+					'nama_kategori' => $this->request->getPost('nama_kategori'),
+					'nama_satuan' => $this->request->getPost('nama_satuan'),
+				)
+		 ));
+		 return redirect()->to(base_url('peminjaman'));
+		}
+
+	
 	}
 
 	public function ViewCart()
@@ -97,6 +112,8 @@ class Peminjaman extends BaseController
 
 	public function SimpanTransaksi()
 	{
+		$ket = $this->request->getPost('ket');
+
 
 		$cart = \Config\Services::cart();
 		$barang = $cart->contents();

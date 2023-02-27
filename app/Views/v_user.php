@@ -110,7 +110,7 @@
 
         <div class="form-group">
           <label>Password</label>
-          <input readonly class="form-control" name="password" value="<?= $value['password'] ?>" placeholder="Password" required>
+          <input class="form-control" name="password" value="<?= $value['password'] ?>" placeholder="Password" required>
         </div>
 
         <div class="form-group">
