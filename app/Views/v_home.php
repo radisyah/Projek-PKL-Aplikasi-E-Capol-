@@ -260,6 +260,10 @@
       datasets: [{
         label: 'Jumlah',
         data: [<?= json_encode($stok) ?>, <?= json_encode($qty) ?>],
+        backgroundColor: [
+          'rgb(51, 204, 51)',
+          'rgb(255, 153, 0)',
+        ],
         borderWidth: 1
       }]
     },
@@ -279,6 +283,10 @@
       datasets: [{
         label: 'Jumlah',
         data: [<?= json_encode($stok2) ?>, <?= json_encode($qty2) ?>],
+        backgroundColor: [
+          'rgb(51, 204, 51)',
+          'rgb(255, 153, 0)',
+        ],
         borderWidth: 1
       }]
     },
@@ -298,6 +306,10 @@
       datasets: [{
         label: 'Jumlah',
         data: [<?= json_encode($stok3) ?>, <?= json_encode($qty3) ?>],
+        backgroundColor: [
+          'rgb(51, 204, 51)',
+          'rgb(255, 153, 0)',
+        ],
         borderWidth: 1
       }]
     },

@@ -126,8 +126,10 @@
                         type="submit"
                         class="btn btn-sm btn-success"
                         data-toggle="modal"
-                        data-target="#peminjaman"
+                        data-target="#konfirm"
+                      
                     
+
                       >
                         <i class="fas fa-cart-plus" style="color: white"> Pinjam</i></a
                       >
@@ -237,9 +239,31 @@
 </div>
 <!-- /Modal Pencarian Barang -->
 
+
+<div class="modal fade" id="konfirm">
+  <div class="modal-dialog">
+    <div class="modal-content bg-info">
+      <div class="modal-header">
+        <h4 class="modal-title">Lanjutkan Transaksi Peminjaman Barang</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Apakah Anda Yakin ?</h5>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Tidak</button>
+        <button  data-toggle="modal"   onclick="PilihModal()"  data-target="#peminjaman"  type="submit" class="btn btn-outline-light">Iya</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+</div>
+
 <!-- Modal Peminjaman Barang -->
 <div class="modal fade " id="peminjaman">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <label class="modal-title">Transaksi Peminjaman</label>
@@ -247,7 +271,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <?php echo form_open('peminjaman/SimpanTransaksi') ?>
+      <?php echo form_open("Peminjaman/SimpanTransaksi") ?>
       <div class="modal-body">
         <div class="form-group">
           <label>Keterangan Peminjaman</label>
@@ -256,7 +280,7 @@
       </div>
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
-        <button type="submit" onclick="Konfirmasi()"  data-toggle="modal"  class="btn btn-primary "><i class="fas fa-save"></i> Simpan Transaksi</button>
+        <button type="submit"  class="btn btn-primary "><i class="fas fa-save"></i> Simpan Transaksi</button>
       </div>
       <?php echo form_close() ?>
     </div>
@@ -265,6 +289,7 @@
   <!-- /.modal-dialog -->
 </div>
 <!-- /Modal Peminjaman Barang -->
+
 
 
 <script>
@@ -316,6 +341,13 @@
   }
 
   function PilihBarang(kode_barang) {
+    $('#kode_barang').val(kode_barang);
+    $('#cari-barang').modal('hide');
+    $('#kode_barang').focus();
+  }
+
+
+  function PilihModal(kode_barang) {
     $('#kode_barang').val(kode_barang);
     $('#cari-barang').modal('hide');
     $('#kode_barang').focus();
