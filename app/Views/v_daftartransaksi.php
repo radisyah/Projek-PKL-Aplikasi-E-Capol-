@@ -34,7 +34,12 @@
                 <td width="200px"><?= $value['nama_barang'] ?></td>
                 <td width="200px"><?= $value['nama_kategori'] ?></td>
                 <td><?= $value['tanggal_pinjam'] ?> <?= $value['jam_pinjam'] ?></td>
-                <td><?= $value['tanggal_kembali'] ?> <?= $value['jam_kembali'] ?></td>
+                <?php if ($value['tanggal_kembali']==null) { ?>
+                  <td> <span class="badge badge-danger">Dipinjam</span></td>
+                <?php } else { ?>
+                  <td><?= $value['tanggal_kembali'] ?> <?= $value['jam_kembali'] ?></td>
+                <?php } ?>
+              
                 <td width="100px"><?= $value['qty'] ?> <?=$value['nama_satuan']?></td>
               </tr>
             <?php } ?>

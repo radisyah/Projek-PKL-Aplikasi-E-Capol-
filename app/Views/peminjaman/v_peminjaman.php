@@ -113,7 +113,7 @@
                         type="submit"
                         class="btn btn-sm btn-primary"
                       >
-                        <i class="fa fa-plus-square"> Tambah</i></button
+                        <i class="fas fa-plus-square"> Tambah</i></button
                       >&nbsp;
                       <a 
                         href="<?=  base_url('peminjaman/ResetCart')?>"
@@ -131,7 +131,7 @@
                     
 
                       >
-                        <i class="fas fa-cart-plus" style="color: white"> Pinjam</i></a
+                        <i class="fa fa-cart-plus" style="color: white"> Pinjam</i></a
                       >
                     </div>
                   </div>
@@ -299,7 +299,7 @@
 
     $('#kode_barang').keydown(function (e) {
       let kode_barang = $('#kode_barang').val();
-      if (e.keyCode == 13) {
+      if (e.keyCode ==  13) {
         e.preventDefault();
         if (kode_barang == '') {
           Swal.fire({
@@ -311,9 +311,31 @@
         }
       }
     });
+
+    $(function(){
+      let kode_barang = $('#kode_barang').val();
+
+      $("#inputBarang").click(function(event){
+        if(event.keyCode===114){
+          e.preventDefault();
+        if (kode_barang == '') {
+          Swal.fire({
+            title: 'Kode Barang Tidak Ditemukan',
+            icon: 'error',
+          });
+        } else {
+          CekBarang();
+        }
+        }
+      });
+    });
     
   });
 
+  
+  
+  
+  
   function CekBarang() {
     $.ajax({
       type: "POST",

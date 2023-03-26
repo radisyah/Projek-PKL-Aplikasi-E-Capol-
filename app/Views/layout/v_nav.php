@@ -9,7 +9,7 @@
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
           <a class="nav-link" href="<?= base_url('auth/logout')?>">
-            Logout
+            <ion-icon name="log-out-sharp"></ion-icon>
           </a>
         </li>
       </ul>

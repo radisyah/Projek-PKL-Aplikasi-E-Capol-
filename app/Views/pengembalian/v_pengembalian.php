@@ -80,8 +80,6 @@
               <button
                   onclick="ViewTabelBarangPinjam()"
                   class="btn btn-primary btn-flat"
-                  data-toggle="modal"
-                  data-target="#cari-produk"
                 >
                   <i style="color: white" class="fas fa-eye"></i>
                 </button>

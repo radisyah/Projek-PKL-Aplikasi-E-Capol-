@@ -4,7 +4,7 @@
     <div class="inner">
       <h3><?= $j_barang ?></h3>
 
-      <p>Total Barang</p>
+      <p>Data Material</p>
     </div>
     <div class="icon">
       <i class="fas fa-boxes"></i>
@@ -21,7 +21,7 @@
     <div class="inner">
       <h3><?= $j_kategori ?><sup style="font-size: 20px"></sup></h3>
 
-      <p>Total Kategori</p>
+      <p>Kategori</p>
     </div>
     <div class="icon">
       <i class="fas fa-bookmark"></i>
@@ -38,7 +38,7 @@
     <div class="inner">
       <h3><?= $j_transaksi ?></h3>
 
-      <p>Total Transaksi</p>
+      <p>Jumlah Transaksi</p>
     </div>
     <div class="icon">
       <i class="fas fa-weight"></i>
@@ -55,7 +55,7 @@
     <div class="inner">
       <h3><?= $j_user ?></h3>
 
-      <p>Total User</p>
+      <p>Jumlah Pengguna</p>
     </div>
     <div class="icon">
       <i class="fas fa-users"></i>
@@ -72,7 +72,7 @@
     <span class="info-box-icon"><i class="fas fa-box"></i></span>
 
     <div class="info-box-content">
-      <span class="info-box-text">Total Barang Dipinjam Hari Ini</span>
+      <span class="info-box-text">Jumlah Barang Dipinjam Perhari</span>
       <span class="info-box-number"><?= $p_hari_ini['qty'] ?></span>
     </div>
     <!-- /.info-box-content -->
@@ -85,7 +85,7 @@
     <span class="info-box-icon"><i class="fas fa-box"></i></span>
 
     <div class="info-box-content">
-      <span class="info-box-text">Total Barang Dipinjam Bulan Ini</span>
+      <span class="info-box-text">Jumlah Barang Dipinjam Perbulan</span>
       <span class="info-box-number"><?= $p_bulan_ini['qty'] ?></span>
     </div>
     <!-- /.info-box-content -->
@@ -98,7 +98,7 @@
     <span class="info-box-icon"><i class="fas fa-box"></i></span>
 
     <div class="info-box-content">
-      <span class="info-box-text">Total Barang Dipinjam Tahun Ini </span>
+      <span class="info-box-text">Jumlah Barang Dipinjam Pertahun </span>
       <span class="info-box-number"><?= $p_tahun_ini['qty'] ?></span>
     </div>
     <!-- /.info-box-content -->
