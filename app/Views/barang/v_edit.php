@@ -23,7 +23,7 @@
         
         <div class="form-group">
           <label>Nama Barang</label>
-          <input  class="form-control" value="<?= $barang['nama_barang'] ?>" name="nama_barang" placeholder="Nama Barang" >
+          <input required  class="form-control" value="<?= $barang['nama_barang'] ?>" name="nama_barang" placeholder="Nama Barang" >
         </div>
 
         <div class="form-group">
@@ -52,7 +52,7 @@
 
         <div class="form-group">
           <label>Stok</label>
-          <input value="<?= $barang['stok'] ?>"  class="form-control" name="stok" placeholder="Stok" >
+          <input required value="<?= $barang['stok'] ?>"  class="form-control" name="stok" placeholder="Stok" >
         </div>
 
         <div class="form-group">

@@ -107,42 +107,6 @@
               </ul>
             </li>
 
-            <li class="nav-item <?= $menu == 'transaksi' ? 'menu-open' : '' ?>">
-              <a href="#" class="nav-link <?= $menu == 'transaksi' ? 'active' : '' ?>">
-                <i class="nav-icon fa fa-tasks"></i>
-                <p>
-                  Transaksi
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a
-                    href="<?= base_url('peminjaman') ?>"
-                    class="nav-link <?= $sub_menu == 'peminjaman' ? 'active' : '' ?>"
-                  >
-                    <i
-                      class="<?= $sub_menu == 'peminjaman' ? 'far fa-dot-circle nav-icon' : 'far fa-circle nav-icon' ?>"
-                    ></i>
-                    <p>Peminjaman Barang</p>
-                  </a>
-                </li>
-              </ul>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a
-                    href="<?= base_url('pengembalian') ?>"
-                    class="nav-link <?= $sub_menu == 'pengembalian' ? 'active' : '' ?>"
-                  >
-                    <i
-                      class="<?= $sub_menu == 'pengembalian' ? 'far fa-dot-circle nav-icon' : 'far fa-circle nav-icon' ?>"
-                    ></i>
-                    <p>Pengembalian Barang</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
             <li class="nav-item <?= $menu == 'laporan' ? 'menu-open' : '' ?>">
             <a href="#" class="nav-link <?= $menu == 'laporan' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-file-alt"></i>
