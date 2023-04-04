@@ -18,7 +18,7 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img
-            src="<?= session()->get('foto') == 'user.jpg' ?  base_url('img/user.jpg') : base_url('img/admin.jpg') ?>"
+            src="<?= session()->get('level') == 2 ?  base_url('img/user.jpg') : base_url('img/admin.jpg') ?>"
             class="img-circle elevation-2"
             alt="User Image"
             style="opacity: 0.9"

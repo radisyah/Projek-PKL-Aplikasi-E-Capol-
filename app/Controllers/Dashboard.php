@@ -44,8 +44,7 @@ class Dashboard extends BaseController
 			'livePinjam' => $this->ModelDaftarTransaksi->LivePinjam(),
 			'j_user' => $this->ModelDashboard->JumlahUser(),
 			'profil' => $this->ModelUser->all_data(),
-
-			'isi' => 'v_Home'
+			'isi' => 'v_home'
 		);
 		return view('layout/v_wrapper', $data);
 

@@ -70,10 +70,13 @@
   <!-- Info Boxes Style 2 -->
   <div class="info-box mb-3 bg-navy">
     <span class="info-box-icon"><i class="fas fa-box"></i></span>
-
     <div class="info-box-content">
       <span class="info-box-text">Jumlah Barang Dipinjam Perhari</span>
-      <span class="info-box-number"><?= $p_hari_ini['qty'] ?></span>
+      <?php if ($p_hari_ini['qty']==null) { ?>
+        <span class="info-box-number">0</span>
+      <?php } else { ?>
+        <span class="info-box-number"><?= $p_hari_ini['qty'] ?></span>
+      <?php } ?>
     </div>
     <!-- /.info-box-content -->
   </div>
@@ -86,7 +89,11 @@
 
     <div class="info-box-content">
       <span class="info-box-text">Jumlah Barang Dipinjam Perbulan</span>
-      <span class="info-box-number"><?= $p_bulan_ini['qty'] ?></span>
+      <?php if ($p_bulan_ini['qty']==null) { ?>
+        <span class="info-box-number">0</span>
+      <?php } else { ?>
+        <span class="info-box-number"><?= $p_bulan_ini['qty'] ?></span>
+      <?php } ?>
     </div>
     <!-- /.info-box-content -->
   </div>
@@ -99,7 +106,11 @@
 
     <div class="info-box-content">
       <span class="info-box-text">Jumlah Barang Dipinjam Pertahun </span>
-      <span class="info-box-number"><?= $p_tahun_ini['qty'] ?></span>
+      <?php if ($p_tahun_ini['qty']==null) { ?>
+        <span class="info-box-number">0</span>
+      <?php } else { ?>
+        <span class="info-box-number"><?= $p_tahun_ini['qty'] ?></span>
+      <?php } ?>
     </div>
     <!-- /.info-box-content -->
   </div>

@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
 use App\Models\ModelUser;
 use App\Models\ModelTransaksi;
-use App\Models\modelBarang;
+use App\Models\ModelBarang;
 
 
 
